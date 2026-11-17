@@ -134,7 +134,7 @@ Example:
 skills/work-log/SKILL.md          writes the work log
 skills/work-audit/SKILL.md        runs the audit
 skills/work-audit/references/briefs.md         the agent briefs
-skills/work-audit/assets/report-template.html  report layout (sample data only)
+skills/work-audit/assets/report-template.md    report layout: CSS and HTML blocks (sample data only)
 ```
 
 ## Licence

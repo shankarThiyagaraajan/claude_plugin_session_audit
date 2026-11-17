@@ -83,7 +83,7 @@ Arguments: $ARGUMENTS. All are optional.
    Where 2 performance reviewers differ, show both; never run a third.
 
 7. **Build the report page.**
-   - Start from `assets/report-template.html` in this skill's folder. Open it with the **Read tool** (shell reads of the plugin folder may be blocked), and write the report with the Write tool. **Every value in it is made-up sample data:** keep its CSS, structure and chart classes, and replace all of the content. If the repository has its own colour tokens, you may map them onto the template's.
+   - Start from `assets/report-template.md` in this skill's folder; its "How to assemble the page" section says how its head lines, styles and body make the page. Open it with the **Read tool** (shell reads of the plugin folder may be blocked), and write the report with the Write tool. **Every value in it is made-up sample data:** keep its CSS, structure and chart classes, and replace all of the content. If the repository has its own colour tokens, you may map them onto the template's.
    - Sections, in this order. Keep every one, and write "none" where a section is empty.
      - Header: what was audited, PR links, date, sources, mode.
      - Verdict band: three states (process, inputs, compliance) and the one key number, the avoidable tokens.

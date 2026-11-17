@@ -1,7 +1,7 @@
 {
   "name": "session-audit",
   "description": "Audit an AI coding session: write a factual work log, then check whether the work was efficient or overkill, with independent reviewers, security and performance reviews, and one HTML report with charts.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": { "name": "Shankar Thiyagarajan" },
   "homepage": "https://github.com/shankarThiyagaraajan/claude_plugin_session_audit",
   "repository": "https://github.com/shankarThiyagaraajan/claude_plugin_session_audit",

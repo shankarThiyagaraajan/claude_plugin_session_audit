@@ -1,15 +1,22 @@
-<!--
-  work-audit report template.
-  SAMPLE DATA ONLY: "example-shop", its PRs, numbers, files and findings are made up.
-  Keep the CSS, structure and chart classes; replace every piece of content.
-  Bars are to scale: width % = value / scale max x 100. State each chart's scale under it.
-  For a page-publishing tool, pass this content as it is (the tool adds the document wrapper).
-  For a local file, wrap it in <!doctype html><html lang="en"><head><meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> ... </head><body> ... </body></html>.
--->
-<title>example-shop Session Audit</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<style>
+# work-audit report template
+
+The layout of the audit report page. **Every value in it is made-up sample data:** "example-shop", its PRs, numbers, files and findings are invented. Keep the CSS, the structure and the chart classes, and replace every piece of content.
+
+## How to assemble the page
+
+The page is made of three parts, in this order:
+
+1. **Head lines:** a `title` element with the text "<project> Session Audit", and a `meta` element with `name="claude:viewport-fit-sides"` and `content="cover"`.
+2. **Styles:** the CSS in the "Styles" section below, inside one `style` element, unchanged except for colour tokens you map to the repository's own.
+3. **Body:** the HTML in the "Body" section below, with the sample content replaced by the audit's own.
+
+For a page-publishing tool, pass these three parts as they are; the tool adds the document wrapper. For a local file, add the document wrapper that SKILL.md gives, with the head lines and the styles inside its head.
+
+Bars are to scale: width % = value / scale max x 100. State each chart's scale under it.
+
+## Styles
+
+```css
 /* Layout: one reading column (max 980px). Summary band first, then sections from cost to actions. Charts are to-scale CSS bars. */
 :root {
   --bg: #f3f5f8; --surface: #ffffff; --surface-2: #eceff4; --border: #dbe1ea;
@@ -114,8 +121,11 @@ footer { font-size: 12.5px; color: var(--ink-muted); border-top: 1px solid var(-
   ol.actions li .chip { grid-column: 2; justify-self: start; }
 }
 @media (max-width: 420px) { .flow { grid-template-columns: minmax(0, 1fr); } h1 { font-size: 25px; } }
-</style>
+```
 
+## Body
+
+```html
 <div class="wrap">
 
 <header>
@@ -298,3 +308,4 @@ footer { font-size: 12.5px; color: var(--ink-muted); border-top: 1px solid var(-
 </footer>
 
 </div>
+```
