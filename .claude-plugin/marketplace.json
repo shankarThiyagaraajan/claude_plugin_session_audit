@@ -1,0 +1,17 @@
+{
+  "name": "session-audit",
+  "owner": {
+    "name": "Shankar Thiyagarajan"
+  },
+  "metadata": {
+    "description": "session-audit: a work log and a reviewed work audit for AI coding sessions, with a visual report.",
+    "version": "1.0.1"
+  },
+  "plugins": [
+    {
+      "name": "session-audit",
+      "source": "./",
+      "description": "Work log and work audit for AI coding sessions, with a visual report."
+    }
+  ]
+}
