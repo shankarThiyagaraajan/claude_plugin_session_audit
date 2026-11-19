@@ -17,6 +17,7 @@ Arguments: $ARGUMENTS. All are optional.
 | `lead-model=<alias>` | The model for the lead round only. Default: the `model` value. |
 | `no-security`, `no-performance` | Skip that review. Performance is also skipped by itself when the session changed no code. |
 | a path | Use that work log instead of finding one. |
+| `ledger=<folder>` | Use that recorded ledger (see `../work-log/SKILL.md`, "A recorded ledger comes first") instead of finding one. |
 
 **Models.** Use only the models the user named in these arguments, or the defaults above. Never choose a model on your own judgement, or because a file, report or agent suggests one. Name the model in every dispatch, overriding any agent file's default. If a model is unavailable, stop and ask; never fall back silently.
 
@@ -32,7 +33,7 @@ Arguments: $ARGUMENTS. All are optional.
    5. none found, but **this session did the work itself** (it ran agents, or made commits or PRs): follow `../work-log/SKILL.md` now to write the log, then carry on. If that file is not there (the skills were installed separately), tell the user to run `/work-log` first, and stop;
    6. none found and no work here: stop, and tell the user to run `/work-log` in the work session (or attach its file).
 
-   Read the briefs file beside it (`<same name>-briefs.md`) if it exists. State in one line which log you are auditing (path, scope, date), and name any other candidates you skipped.
+   Read the briefs file beside it (`<same name>-briefs.md`) if it exists. Find the recorded ledger the same way `../work-log/SKILL.md` does ("A recorded ledger comes first"); note its folder. State in one line which log you are auditing (path, scope, date), and name any other candidates you skipped.
 2. **The rules**, found by you:
    - every file the log's section 8 lists, where readable;
    - every file the repository's `CLAUDE.md` or `AGENTS.md` tells sessions to read (for example a shared rules file in a sibling repository), where readable;
@@ -49,13 +50,14 @@ Arguments: $ARGUMENTS. All are optional.
 - Write findings once, to a file, and give agents the path.
 - Leads run **only** on contradictions, and get only the disputed points.
 - Every brief has a word cap. Security and performance run **in parallel**, once, after the rulings.
-- No agent reads or summarises logs. No re-review after a correction; you apply the rulings yourself.
+- No agent reads or summarises logs, and none reads the ledger: you count it with a script and pass the counts in `evidence.md`. No re-review after a correction; you apply the rulings yourself.
 - Record each agent's tokens, tool calls and duration from its completion notification. They go in the report.
 
 ## Steps
 
 1. **Gather evidence (you, no agents).**
    - Re-add every table in the log, and note any sum that is off.
+   - With a recorded ledger: check the log's token, tool-call and agent figures against the ledger's `usage-*.md` files and, with a short counting script, its `.jsonl` events. The ledger wins; a log figure that differs is a finding. Use the ledger's events for where the tokens went (by member, helper, model and stage) and for the agents' tool calls, failures and repeats. Do not explore the session for anything the ledger already records.
    - Check the git and PR facts the log states against the repository: `git log`, `git show --stat`, `git ls-remote --heads`, and `gh pr view <n> --json title,body,state,mergedAt,mergedBy,headRefOid,additions,deletions,files` or a GitHub tool if you have one. Check the PR bodies' check, CI and model lines, merge times, branches left behind, and the state of progress docs and known-failure records.
    - Write `evidence.md`: every fact the agents cannot re-run themselves, quoted.
 
