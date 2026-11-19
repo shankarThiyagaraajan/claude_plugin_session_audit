@@ -26,6 +26,10 @@ It is built for sessions that start sub-agents to build, review and fix code. It
   - performance findings, including timings against budget and requests per user action;
   - ordered actions, with commands.
 
+## A recorded ledger, if you have one
+
+If your setup records the work as it happens, both commands use that record first and explore only what it lacks. The [claude_live_team](https://github.com/shankarThiyagaraajan) kit's team chat mod writes one per run: a `usage-*.md` table of tokens, cost, tool calls and busy time per member and per helper, and `ledger-*.jsonl` events (tool calls with a masked target, turns with tokens, spawns, messages' first lines, arrivals). The commands find it from `.claude/team.json`, or take `ledger=<folder>`. The format is in `skills/work-log/SKILL.md`.
+
 ## Install
 
 **Claude Code, from a marketplace**
